@@ -1,23 +1,23 @@
-'use client';
-import Link from 'next/link';
-import styles from './authLinks.module.css';
-import { useState } from 'react';
+"use client";
+import Link from "next/link";
+import styles from "./authLinks.module.css";
+import { useState } from "react";
 
 function AuthLinks() {
   const [open, setOpen] = useState(false);
 
   // temorary
-  const status = 'notAuthenticated';
+  const status = "notAuthenticated";
 
   return (
     <>
-      {status === 'notAuthenticated' ? (
-        <Link href='./login' className={styles.link}>
+      {status === "notAuthenticated" ? (
+        <Link href="/login" className={styles.link}>
           Login
         </Link>
       ) : (
         <>
-          <Link href='./write' className={styles.link}>
+          <Link href="/write" className={styles.link}>
             Write
           </Link>
           <span className={styles.link}>Logout</span>
@@ -30,14 +30,14 @@ function AuthLinks() {
       </div>
       {open && (
         <div className={styles.responsiveMenu}>
-          <Link href='/'>Homepage</Link>
-          <Link href='/'>About</Link>
-          <Link href='/'>Contact</Link>
-          {status === 'notAuthenticated' ? (
-            <Link href='./login'>Login</Link>
+          <Link href="/">Homepage</Link>
+          <Link href="/">About</Link>
+          <Link href="/">Contact</Link>
+          {status === "notAuthenticated" ? (
+            <Link href="/login">Login</Link>
           ) : (
             <>
-              <Link href='./write'>Write</Link>
+              <Link href="/write">Write</Link>
               <span className={styles.link}>Logout</span>
             </>
           )}
