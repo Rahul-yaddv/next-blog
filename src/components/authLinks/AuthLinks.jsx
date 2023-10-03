@@ -7,7 +7,7 @@ function AuthLinks() {
   const [open, setOpen] = useState(false);
 
   // temorary
-  const status = "notAuthenticated";
+  const status = "Authenticated";
 
   return (
     <>
