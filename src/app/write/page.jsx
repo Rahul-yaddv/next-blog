@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
@@ -36,7 +35,7 @@ const WritePage = () => {
 
       uploadTask.on(
         "state_changed",
-        (snapshot) => {
+        snapshot => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log("Upload is " + progress + "% done");
@@ -49,9 +48,9 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {},
+        error => {},
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
             setMedia(downloadURL);
           });
         }
@@ -69,7 +68,7 @@ const WritePage = () => {
     router.push("/");
   }
 
-  const slugify = (str) =>
+  const slugify = str =>
     str
       .toLowerCase()
       .trim()
@@ -101,9 +100,12 @@ const WritePage = () => {
         type="text"
         placeholder="Title"
         className={styles.input}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={e => setTitle(e.target.value)}
       />
-      <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
+      <select
+        className={styles.select}
+        onChange={e => setCatSlug(e.target.value)}
+      >
         <option value="style">style</option>
         <option value="fashion">fashion</option>
         <option value="food">food</option>
@@ -120,7 +122,7 @@ const WritePage = () => {
             <input
               type="file"
               id="image"
-              onChange={(e) => setFile(e.target.files[0])}
+              onChange={e => setFile(e.target.files[0])}
               style={{ display: "none" }}
             />
             <button className={styles.addButton}>

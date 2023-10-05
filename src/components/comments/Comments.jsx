@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
-const fetcher = async (url) => {
+const fetcher = async url => {
   const res = await fetch(url);
 
   const data = await res.json();
@@ -24,7 +24,7 @@ const Comments = ({ postSlug }) => {
   const { status } = useSession();
 
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `${process.env.URL}/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 
@@ -46,7 +46,7 @@ const Comments = ({ postSlug }) => {
           <textarea
             placeholder="write a comment..."
             className={styles.input}
-            onChange={(e) => setDesc(e.target.value)}
+            onChange={e => setDesc(e.target.value)}
           />
           <button className={styles.button} onClick={handleSubmit}>
             Send
@@ -58,7 +58,7 @@ const Comments = ({ postSlug }) => {
       <div className={styles.comments}>
         {isLoading
           ? "loading"
-          : data?.map((item) => (
+          : data?.map(item => (
               <div className={styles.comment} key={item._id}>
                 <div className={styles.user}>
                   {item?.user?.image && (
