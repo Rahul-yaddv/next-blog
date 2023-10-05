@@ -4,10 +4,9 @@ import styles from "./authLinks.module.css";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 
-function AuthLinks() {
+const AuthLinks = () => {
   const [open, setOpen] = useState(false);
 
-  // temorary
   const { status } = useSession();
 
   return (
@@ -36,7 +35,7 @@ function AuthLinks() {
           <Link href="/">Homepage</Link>
           <Link href="/">About</Link>
           <Link href="/">Contact</Link>
-          {status === "notAuthenticated" ? (
+          {status === "notauthenticated" ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
@@ -48,6 +47,6 @@ function AuthLinks() {
       )}
     </>
   );
-}
+};
 
 export default AuthLinks;

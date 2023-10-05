@@ -4,13 +4,14 @@ import React from "react";
 import styles from "./pagination.module.css";
 import { useRouter } from "next/navigation";
 
-function Pagination({ page, hasPrev, hasNext }) {
+const Pagination = ({ page, hasPrev, hasNext }) => {
   const router = useRouter();
+
   return (
     <div className={styles.container}>
       <button
-        disabled={!hasPrev}
         className={styles.button}
+        disabled={!hasPrev}
         onClick={() => router.push(`?page=${page - 1}`)}
       >
         Previous
@@ -24,6 +25,6 @@ function Pagination({ page, hasPrev, hasNext }) {
       </button>
     </div>
   );
-}
+};
 
 export default Pagination;

@@ -24,9 +24,10 @@ a {
 .dark {
   --bg: #0f172a;
   --textColor: #ddd;
-  --softBg: #1f272a;
-  --softTextcolor: #a6a6a6;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
 }
+
 .light {
   --bg: white;
   --textColor: black;
@@ -76,10 +77,10 @@ a {
   }
 }
 
-.ql-container {
+.ql-container{
   font-size: 28px !important;
 }
 
-.quill > .ql-container > .ql-editor.ql-blank::before {
+.quill > .ql-container > .ql-editor.ql-blank::before{
   color: #b3b3b1;
 }
