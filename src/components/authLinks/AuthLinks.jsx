@@ -1,26 +1,39 @@
 "use client";
 import Link from "next/link";
 import styles from "./authLinks.module.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { signOut, useSession } from "next-auth/react";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   const { status } = useSession();
 
   return (
     <>
       {status === "unauthenticated" ? (
-        <Link href="/login" className={styles.link}>
+        <Link
+          href="/login"
+          className={`${theme === "dark" ? styles.dark : styles.light}`}
+        >
           Login
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
+          <Link
+            href="/write"
+            className={`${theme === "dark" ? styles.dark : styles.light}`}
+          >
             Write
           </Link>
-          <span className={styles.link} onClick={signOut}>
+          <span
+            className={`${theme === "dark" ? styles.dark : styles.light} ${
+              styles.logout
+            }`}
+            onClick={signOut}
+          >
             Logout
           </span>
         </>

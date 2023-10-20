@@ -5,10 +5,14 @@
   height: 100px;
 }
 
-.social {
+.socials {
   display: flex;
   gap: 10px;
   flex: 1;
+}
+.social:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .logo {
@@ -36,7 +40,7 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  .social {
+  .socials {
     display: none;
   }
   .logo {
@@ -49,10 +53,7 @@
   }
 }
 @media screen and (max-width: 640px) {
-  .links{
+  .links {
     justify-content: flex-end;
-  }
-  .link {
-    display: none;
   }
 }

@@ -24,27 +24,45 @@
 }
 
 .category.style {
-  background-color: #57c4ff31;
+  background-color: #57c4ff59;
+}
+.category.style:hover {
+  background-color: #1aa4efad;
 }
 
 .category.fashion {
   background-color: #da85c731;
 }
+.category.fashion:hover {
+  background-color: #da85c897;
+}
 
 .category.food {
   background-color: #7fb88133;
+}
+.category.food:hover {
+  background-color: #7fb8818e;
 }
 
 .category.travel {
   background-color: #ff795736;
 }
+.category.travel:hover {
+  background-color: #ff79578a;
+}
 
 .category.culture {
   background-color: #ffb04f45;
 }
+.category.culture:hover {
+  background-color: #ffb04f92;
+}
 
 .category.coding {
   background-color: #5e4fff31;
+}
+.category.coding:hover {
+  background-color: #5e4fff88;
 }
 
 .image {
