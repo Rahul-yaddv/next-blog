@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const getData = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/posts/title-trekking-in-snow-an-enchanting-adventure-in-europe`,
+    `${process.env.NEXT_PUBLIC_URL}/api/posts/trekking-in-snow-an-enchanting-adventure-in-europe`,
     {
       cache: "no-store",
     }
@@ -64,9 +64,7 @@ const Featured = () => {
             dangerouslySetInnerHTML={{ __html: truncateText(data?.desc, 80) }}
           ></p>
           <Link
-            href={
-              "/posts/title-trekking-in-snow-an-enchanting-adventure-in-europe"
-            }
+            href={"/posts/trekking-in-snow-an-enchanting-adventure-in-europe"}
           >
             <button className={styles.button}>Read More</button>
           </Link>

@@ -23,8 +23,11 @@ const MenuCategories = () => {
       <Link href="/blog" className={`${styles.categoryItem} ${styles.culture}`}>
         Culture
       </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.coding}`}>
-        Coding
+      <Link
+        href="/blog"
+        className={`${styles.categoryItem} ${styles.technology}`}
+      >
+        Technology
       </Link>
     </div>
   );

@@ -10,9 +10,18 @@
   background-color: crimson;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-.button:disabled{
+.button:hover {
+  background-color: red;
+}
+
+.button:disabled {
   background-color: rgba(220, 20, 60, 0.473);
   cursor: not-allowed;
+}
+
+.buttonText {
+  transform: scale(1.4);
 }

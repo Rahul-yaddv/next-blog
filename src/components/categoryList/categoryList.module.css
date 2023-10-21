@@ -58,10 +58,10 @@
   background-color: #ffb04f92;
 }
 
-.category.coding {
+.category.technology {
   background-color: #5e4fff31;
 }
-.category.coding:hover {
+.category.technology:hover {
   background-color: #5e4fff88;
 }
 

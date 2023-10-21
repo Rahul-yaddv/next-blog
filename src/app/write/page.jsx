@@ -37,7 +37,7 @@ const WritePage = () => {
 
       uploadTask.on(
         "state_changed",
-        snapshot => {
+        (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log("Upload is " + progress + "% done");
@@ -50,9 +50,9 @@ const WritePage = () => {
               break;
           }
         },
-        error => {},
+        (error) => {},
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
           });
         }
@@ -70,7 +70,7 @@ const WritePage = () => {
     router.push("/");
   }
 
-  const slugify = str =>
+  const slugify = (str) =>
     str
       .toLowerCase()
       .trim()
@@ -102,18 +102,17 @@ const WritePage = () => {
         type="text"
         placeholder="Title"
         className={styles.input}
-        onChange={e => setTitle(e.target.value)}
+        onChange={(e) => setTitle(e.target.value)}
       />
       <select
         className={styles.select}
-        onChange={e => setCatSlug(e.target.value)}
+        onChange={(e) => setCatSlug(e.target.value)}
       >
-        <option value="style">style</option>
         <option value="fashion">fashion</option>
         <option value="food">food</option>
         <option value="culture">culture</option>
         <option value="travel">travel</option>
-        <option value="coding">coding</option>
+        <option value="technology">technology</option>
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
@@ -124,7 +123,7 @@ const WritePage = () => {
             <input
               type="file"
               id="image"
-              onChange={e => setFile(e.target.files[0])}
+              onChange={(e) => setFile(e.target.files[0])}
               style={{ display: "none" }}
             />
             <button className={styles.addButton}>

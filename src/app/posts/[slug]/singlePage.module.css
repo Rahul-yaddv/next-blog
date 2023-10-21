@@ -50,6 +50,7 @@
 
 .image {
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .content {
@@ -88,7 +89,7 @@
     font-size: 36px;
   }
 
-  .description p{
+  .description p {
     font-size: 18px;
   }
 }
